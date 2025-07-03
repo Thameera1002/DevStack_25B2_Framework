@@ -37,9 +37,9 @@ public class ExtentReportManager {
         }
     }
 
-    public static void logSkip(String message) {
+    public static void logSkip(String message,String errorImg) {
         if(Objects.nonNull(test)) {
-            test.log(Status.SKIP,message);
+            test.skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(errorImg).build());
         }
     }
 
