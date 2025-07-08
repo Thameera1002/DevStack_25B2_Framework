@@ -20,7 +20,7 @@ import java.util.List;
 
 public class ExcelHandler {
 
-    private static final String EXCEL_PATH= "src/test/resources/excelData";
+    private static final String EXCEL_PATH= "src/test/resources/excelData/";
 
     @DataProvider(name = "commonDataProvider")
     public static Object[][] commonDataProvider(Method method){
@@ -81,7 +81,7 @@ public class ExcelHandler {
     private static Class<?> getModelClass(String testClassName) {
         String modelClassName = testClassName+"Model";
         try {
-            return Class.forName("com.devstack.b2.automation.model"+modelClassName);
+            return Class.forName("com.devstack.b2.automation.model."+modelClassName);
         }catch (ClassNotFoundException e){
             throw new RuntimeException("Could not find model class "+modelClassName,e);
         }
