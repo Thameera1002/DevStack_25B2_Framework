@@ -14,11 +14,19 @@ public class LIB_Common extends FunctionBase {
         pg_login = new PG_Login(driver);
     }
 
-    public void bc_Login(String userName, String password) {
-        ExtentReportManager.writeToReport("Start of bc_Login");
+    public void bc_SuccessLogin(String userName, String password) {
+        ExtentReportManager.writeToReport("Start of bc_SuccessLogin");
         pg_login.fillUserName(userName);
         pg_login.fillPassword(password);
         pg_login.clickLogin();
-        ExtentReportManager.writeToReport("End of bc_Login");
+        ExtentReportManager.writeToReport("End of bc_SuccessLogin");
+    }
+
+    public void bc_FailLogin(String userName, String password) {
+        ExtentReportManager.writeToReport("Start of bc_FailLogin");
+        pg_login.fillUserName(userName);
+        pg_login.fillPassword(password);
+        pg_login.clickLoginBtn();
+        ExtentReportManager.writeToReport("End of bc_FailLogin");
     }
 }

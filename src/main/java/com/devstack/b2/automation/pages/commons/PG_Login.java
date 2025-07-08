@@ -12,6 +12,7 @@ public class PG_Login extends SeleniumTestBase {
     By tf_userName = By.id("username");
     By tf_password = By.id("password");
     By btn_login = By.xpath("//button[text()='Login']");
+    By btn_loginBtn = By.xpath("//button[text()='Log']");
 
     public void fillUserName(String userName) {
         type(tf_userName,userName);
@@ -21,6 +22,9 @@ public class PG_Login extends SeleniumTestBase {
     }
     public void clickLogin() {
         click(btn_login);
+    }
+    public void clickLoginBtn() {
+        click(btn_loginBtn);
     }
 
 }
